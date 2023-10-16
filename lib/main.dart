@@ -64,6 +64,20 @@ class _HomePageState extends State<HomePage> {
           }
 
           String url = await _addGeolocationParam(request.url);
+
+          Map<String, String> addParams = {
+            'longitudei': '0',
+            'latitude': '0',
+          };
+
+          Uri uri = Uri.parse(url);
+          Map<String, String> constParams = uri.queryParameters;
+          Map<String,String> params = {};
+          params.addAll(constParams);
+          params.addAll(addParams);
+
+          url = uri.replace(queryParameters: params).toString();
+
           wvController.loadUrl(url);
           return NavigationDecision.navigate;
         },
