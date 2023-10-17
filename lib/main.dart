@@ -66,8 +66,8 @@ class _HomePageState extends State<HomePage> {
           String url = await _addGeolocationParam(request.url);
 
           Map<String, String> addParams = {
-            'longitudei': '0',
-            'latitude': '0',
+            'aa': '0',
+            'bb': '0',
           };
 
           Uri uri = Uri.parse(url);
